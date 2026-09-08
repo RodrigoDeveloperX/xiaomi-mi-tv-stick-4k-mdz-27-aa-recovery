@@ -1,0 +1,228 @@
+
+--- [09:35:41] aguardando aparelho e conferindo identidade ---
+MSG[DNL]Amlogic USB DNL tool: V[2.6.3] at Aug 20 2021
+< waiting for Amlogic DNL device >
+DNL mode [TPL]	06-00-00-10-00-00-00-00
+finished. total time: 0.001s
+>>> identidade OK, iniciando gravacao
+
+--- [09:38:01] oem disk_initial ---
+MSG[DNL]Amlogic USB DNL tool: V[2.6.3] at Aug 20 2021
+...
+cmd[oem disk_initial]
+response:
+OKAY [  0.138s]
+finished. total time: 0.138s
+[rc=0]
+
+--- [09:38:01] partition -p dtbo_a -f images/dtbo.img ---
+MSG[DNL]Amlogic USB DNL tool: V[2.6.3] at Aug 20 2021
+...
+cmd[oem mwrite 0x200000 normal store dtbo_a 0x0]
+response:
+OKAY [  0.002s]
+media writing [mwrite:verify=addsum]...
+Downloading...
+[100%/    2MBytes] 190ms
+MSG[DNL]mwrite finish
+OKAY [  0.197s]
+finished. total time: 0.198s
+[rc=0]
+
+--- [09:38:02] partition -p dtbo_b -f images/dtbo.img ---
+MSG[DNL]Amlogic USB DNL tool: V[2.6.3] at Aug 20 2021
+...
+cmd[oem mwrite 0x200000 normal store dtbo_b 0x0]
+response:
+OKAY [  0.000s]
+media writing [mwrite:verify=addsum]...
+Downloading...
+[100%/    2MBytes] 181ms
+MSG[DNL]mwrite finish
+OKAY [  0.188s]
+finished. total time: 0.188s
+[rc=0]
+
+--- [09:38:02] partition -p oem_a -f images/oem.img ---
+MSG[DNL]Amlogic USB DNL tool: V[2.6.3] at Aug 20 2021
+...
+cmd[oem mwrite 0x2000000 normal store oem_a 0x0]
+response:
+OKAY [  0.001s]
+media writing [mwrite:verify=addsum]...
+Downloading...
+[ 12%/   32MBytes] 378ms[ 24%/   32MBytes] 778ms[ 36%/   32MBytes] 1187ms[ 48%/   32MBytes] 1554ms[ 60%/   32MBytes] 1955ms[ 72%/   32MBytes] 2349ms[ 84%/   32MBytes] 2731ms[ 96%/   32MBytes] 3125ms[100%/   32MBytes] 3235ms
+MSG[DNL]mwrite finish
+OKAY [  3.243s]
+finished. total time: 3.244s
+[rc=0]
+
+--- [09:38:05] partition -p oem_b -f images/oem.img ---
+MSG[DNL]Amlogic USB DNL tool: V[2.6.3] at Aug 20 2021
+...
+cmd[oem mwrite 0x2000000 normal store oem_b 0x0]
+response:
+OKAY [  0.002s]
+media writing [mwrite:verify=addsum]...
+Downloading...
+[ 12%/   32MBytes] 402ms[ 24%/   32MBytes] 806ms[ 36%/   32MBytes] 1200ms[ 48%/   32MBytes] 1589ms[ 60%/   32MBytes] 1979ms[ 72%/   32MBytes] 2350ms[ 84%/   32MBytes] 2735ms[ 96%/   32MBytes] 3145ms[100%/   32MBytes] 3252ms
+MSG[DNL]mwrite finish
+OKAY [  3.258s]
+finished. total time: 3.260s
+[rc=0]
+
+--- [09:38:09] partition -p odm_ext_a -f images/odm_ext.img ---
+MSG[DNL]Amlogic USB DNL tool: V[2.6.3] at Aug 20 2021
+...
+cmd[oem mwrite 0x1000000 normal store odm_ext_a 0x0]
+response:
+OKAY [  0.002s]
+media writing [mwrite:verify=addsum]...
+Downloading...
+[ 25%/   16MBytes] 382ms[ 50%/   16MBytes] 820ms[ 75%/   16MBytes] 1224ms[100%/   16MBytes] 1621ms
+MSG[DNL]mwrite finish
+OKAY [  1.621s]
+finished. total time: 1.623s
+[rc=0]
+
+--- [09:38:11] partition -p odm_ext_b -f images/odm_ext.img ---
+MSG[DNL]Amlogic USB DNL tool: V[2.6.3] at Aug 20 2021
+...
+cmd[oem mwrite 0x1000000 normal store odm_ext_b 0x0]
+response:
+OKAY [  0.000s]
+media writing [mwrite:verify=addsum]...
+Downloading...
+[ 25%/   16MBytes] 408ms[ 50%/   16MBytes] 822ms[ 75%/   16MBytes] 1232ms[100%/   16MBytes] 1636ms
+MSG[DNL]mwrite finish
+OKAY [  1.636s]
+finished. total time: 1.636s
+[rc=0]
+
+--- [09:38:12] partition -p vbmeta_a -f images/vbmeta.img ---
+MSG[DNL]Amlogic USB DNL tool: V[2.6.3] at Aug 20 2021
+...
+cmd[oem mwrite 0x2000 normal store vbmeta_a 0x0]
+response:
+OKAY [  0.000s]
+media writing [mwrite:verify=addsum]...
+Downloading...
+[101%/    0MBytes] 0ms
+MSG[DNL]mwrite finish
+OKAY [  0.000s]
+finished. total time: -0.000s
+[rc=0]
+
+--- [09:38:13] partition -p vbmeta_b -f images/vbmeta.img ---
+MSG[DNL]Amlogic USB DNL tool: V[2.6.3] at Aug 20 2021
+...
+cmd[oem mwrite 0x2000 normal store vbmeta_b 0x0]
+response:
+OKAY [  0.001s]
+media writing [mwrite:verify=addsum]...
+Downloading...
+[101%/    0MBytes] 0ms
+MSG[DNL]mwrite finish
+OKAY [  0.000s]
+finished. total time: 0.001s
+[rc=0]
+
+--- [09:38:13] partition -p vbmeta_system_a -f images/vbmeta_system.img ---
+MSG[DNL]Amlogic USB DNL tool: V[2.6.3] at Aug 20 2021
+...
+cmd[oem mwrite 0x1000 normal store vbmeta_system_a 0x0]
+response:
+OKAY [  0.002s]
+media writing [mwrite:verify=addsum]...
+Downloading...
+[102%/    0MBytes] 0ms
+MSG[DNL]mwrite finish
+OKAY [  0.000s]
+finished. total time: 0.002s
+[rc=0]
+
+--- [09:38:13] partition -p vbmeta_system_b -f images/vbmeta_system.img ---
+MSG[DNL]Amlogic USB DNL tool: V[2.6.3] at Aug 20 2021
+...
+cmd[oem mwrite 0x1000 normal store vbmeta_system_b 0x0]
+response:
+OKAY [  0.000s]
+media writing [mwrite:verify=addsum]...
+Downloading...
+[102%/    0MBytes] 0ms
+MSG[DNL]mwrite finish
+OKAY [  0.000s]
+finished. total time: -0.000s
+[rc=0]
+
+--- [09:38:13] partition -p vendor_boot_a -f images/vendor_boot.img ---
+MSG[DNL]Amlogic USB DNL tool: V[2.6.3] at Aug 20 2021
+...
+cmd[oem mwrite 0x1800000 normal store vendor_boot_a 0x0]
+response:
+OKAY [  0.000s]
+media writing [mwrite:verify=addsum]...
+Downloading...
+[ 16%/   24MBytes] 393ms[ 32%/   24MBytes] 789ms[ 48%/   24MBytes] 1192ms[ 65%/   24MBytes] 1581ms[ 81%/   24MBytes] 1980ms[ 97%/   24MBytes] 2397ms[100%/   24MBytes] 2445ms
+MSG[DNL]mwrite finish
+OKAY [  2.461s]
+finished. total time: 2.461s
+[rc=0]
+
+--- [09:38:16] partition -p vendor_boot_b -f images/vendor_boot.img ---
+MSG[DNL]Amlogic USB DNL tool: V[2.6.3] at Aug 20 2021
+...
+cmd[oem mwrite 0x1800000 normal store vendor_boot_b 0x0]
+response:
+OKAY [  0.000s]
+media writing [mwrite:verify=addsum]...
+Downloading...
+[ 16%/   24MBytes] 398ms[ 32%/   24MBytes] 772ms[ 48%/   24MBytes] 1163ms[ 65%/   24MBytes] 1561ms[ 81%/   24MBytes] 1960ms[ 97%/   24MBytes] 2373ms[100%/   24MBytes] 2440ms
+MSG[DNL]mwrite finish
+OKAY [  2.440s]
+finished. total time: 2.440s
+[rc=0]
+
+--- [09:38:18] partition -p boot_a -f images/boot.img ---
+MSG[DNL]Amlogic USB DNL tool: V[2.6.3] at Aug 20 2021
+...
+cmd[oem mwrite 0x4000000 normal store boot_a 0x0]
+response:
+OKAY [  0.000s]
+media writing [mwrite:verify=addsum]...
+Downloading...
+[  6%/   64MBytes] 402ms[ 12%/   64MBytes] 807ms[ 18%/   64MBytes] 1190ms[ 24%/   64MBytes] 1605ms[ 30%/   64MBytes] 1990ms[ 36%/   64MBytes] 2355ms[ 42%/   64MBytes] 2763ms[ 48%/   64MBytes] 3153ms[ 54%/   64MBytes] 3541ms[ 60%/   64MBytes] 3949ms[ 66%/   64MBytes] 4344ms[ 72%/   64MBytes] 4734ms[ 78%/   64MBytes] 5144ms[ 84%/   64MBytes] 5544ms[ 90%/   64MBytes] 5977ms[ 96%/   64MBytes] 6360ms[100%/   64MBytes] 6600ms
+MSG[DNL]mwrite finish
+OKAY [  6.600s]
+finished. total time: 6.600s
+[rc=0]
+
+--- [09:38:25] partition -p boot_b -f images/boot.img ---
+MSG[DNL]Amlogic USB DNL tool: V[2.6.3] at Aug 20 2021
+...
+cmd[oem mwrite 0x4000000 normal store boot_b 0x0]
+response:
+OKAY [  0.000s]
+media writing [mwrite:verify=addsum]...
+Downloading...
+[  6%/   64MBytes] 398ms[ 12%/   64MBytes] 799ms[ 18%/   64MBytes] 1214ms[ 24%/   64MBytes] 1613ms[ 30%/   64MBytes] 1997ms[ 36%/   64MBytes] 2413ms[ 42%/   64MBytes] 2829ms[ 48%/   64MBytes] 3230ms[ 54%/   64MBytes] 3615ms[ 60%/   64MBytes] 4013ms[ 66%/   64MBytes] 4384ms[ 72%/   64MBytes] 4780ms[ 78%/   64MBytes] 5192ms[ 84%/   64MBytes] 5579ms[ 90%/   64MBytes] 5985ms[ 96%/   64MBytes] 6380ms[100%/   64MBytes] 6623ms
+MSG[DNL]mwrite finish
+OKAY [  6.632s]
+finished. total time: 6.632s
+[rc=0]
+
+--- [09:38:32] partition -p super -f images/super-raw.img ---
+MSG[DNL]Amlogic USB DNL tool: V[2.6.3] at Aug 20 2021
+...
+cmd[oem mwrite 0x70800000 normal store super 0x0]
+response:
+OKAY [  0.002s]
+media writing [mwrite:verify=addsum]...
+Downloading...
+[  1%/ 1800MBytes] 1789ms[  2%/ 1800MBytes] 3649ms[  3%/ 1800MBytes] 5525ms[  4%/ 1800MBytes] 7371ms[  5%/ 1800MBytes] 9229ms[  6%/ 1800MBytes] 11071ms[  7%/ 1800MBytes] 12948ms[  8%/ 1800MBytes] 14807ms[  9%/ 1800MBytes] 16695ms[ 10%/ 1800MBytes] 18570ms[ 11%/ 1800MBytes] 20461ms[ 12%/ 1800MBytes] 22337ms[ 13%/ 1800MBytes] 24205ms[ 14%/ 1800MBytes] 26097ms[ 15%/ 1800MBytes] 27953ms[ 16%/ 1800MBytes] 29841ms[ 17%/ 1800MBytes] 31696ms[ 18%/ 1800MBytes] 33585ms[ 19%/ 1800MBytes] 35450ms[ 20%/ 1800MBytes] 37330ms[ 21%/ 1800MBytes] 39200ms[ 22%/ 1800MBytes] 41065ms[ 23%/ 1800MBytes] 42954ms[ 24%/ 1800MBytes] 44809ms[ 25%/ 1800MBytes] 46697ms[ 26%/ 1800MBytes] 48537ms[ 27%/ 1800MBytes] 50427ms[ 28%/ 1800MBytes] 52302ms[ 29%/ 1800MBytes] 54152ms[ 30%/ 1800MBytes] 56028ms[ 31%/ 1800MBytes] 57882ms[ 32%/ 1800MBytes] 59765ms[ 33%/ 1800MBytes] 61609ms[ 34%/ 1800MBytes] 63980ms[ 35%/ 1800MBytes] 65875ms[ 36%/ 1800MBytes] 67743ms[ 37%/ 1800MBytes] 70340ms[ 38%/ 1800MBytes] 72215ms[ 39%/ 1800MBytes] 74050ms[ 40%/ 1800MBytes] 75996ms[ 41%/ 1800MBytes] 77870ms[ 42%/ 1800MBytes] 79703ms[ 43%/ 1800MBytes] 81569ms[ 44%/ 1800MBytes] 83500ms[ 45%/ 1800MBytes] 85480ms[ 46%/ 1800MBytes] 87336ms[ 47%/ 1800MBytes] 89203ms[ 48%/ 1800MBytes] 91183ms[ 49%/ 1800MBytes] 93167ms[ 50%/ 1800MBytes] 95025ms[ 51%/ 1800MBytes] 97007ms[ 52%/ 1800MBytes] 98895ms[ 53%/ 1800MBytes] 100774ms[ 54%/ 1800MBytes] 102519ms[ 55%/ 1800MBytes] 104467ms[ 56%/ 1800MBytes] 106475ms[ 57%/ 1800MBytes] 108458ms[ 58%/ 1800MBytes] 110212ms[ 59%/ 1800MBytes] 112130ms[ 60%/ 1800MBytes] 114182ms[ 61%/ 1800MBytes] 116028ms[ 62%/ 1800MBytes] 118172ms[ 63%/ 1800MBytes] 120018ms[ 64%/ 1800MBytes] 122385ms[ 65%/ 1800MBytes] 124802ms[ 66%/ 1800MBytes] 127829ms[ 67%/ 1800MBytes] 130954ms[ 68%/ 1800MBytes] 133075ms[ 69%/ 1800MBytes] 135982ms[ 70%/ 1800MBytes] 139918ms[ 71%/ 1800MBytes] 143379ms[ 72%/ 1800MBytes] 146860ms[ 73%/ 1800MBytes] 151279ms[ 74%/ 1800MBytes] 154932ms[ 75%/ 1800MBytes] 160153ms[ 76%/ 1800MBytes] 164766ms[ 77%/ 1800MBytes] 169366ms[ 78%/ 1800MBytes] 172873ms[ 79%/ 1800MBytes] 177342ms[ 80%/ 1800MBytes] 181922ms[ 81%/ 1800MBytes] 186254ms[ 82%/ 1800MBytes] 190682ms[ 83%/ 1800MBytes] 195216ms[ 84%/ 1800MBytes] 200502ms[ 85%/ 1800MBytes] 205166ms[ 86%/ 1800MBytes] 209713ms[ 87%/ 1800MBytes] 214269ms[ 88%/ 1800MBytes] 219434ms[ 89%/ 1800MBytes] 224942ms[ 90%/ 1800MBytes] 230407ms[ 91%/ 1800MBytes] 235243ms[ 92%/ 1800MBytes] 240717ms[ 93%/ 1800MBytes] 246252ms[ 94%/ 1800MBytes] 251009ms[ 95%/ 1800MBytes] 256617ms[ 96%/ 1800MBytes] 262967ms[ 97%/ 1800MBytes] 268958ms[ 98%/ 1800MBytes] 274249ms[ 99%/ 1800MBytes] 280831ms[100%/ 1800MBytes] 287438ms
+MSG[DNL]mwrite finish
+OKAY [287.462s]
+finished. total time: 287.464s
+[rc=0]
+
+===== GRAVACAO CONCLUIDA COM SUCESSO [09:43:20] =====

@@ -1,0 +1,32 @@
+# Never commit firmware or any partition image.
+# This repository documents the procedure; it does not redistribute
+# proprietary firmware. See docs/mirrors.md.
+*.7z
+*.zip
+*.rar
+*.img
+*.bin
+*.sparse
+
+# Third-party binaries are referenced by hash and official URL, not mirrored.
+*.exe
+*.dll
+*.inf
+*.sys
+*.cat
+
+# Local scratch
+/tmp/
+/scratch/
+*.tmp
+*.bak
+
+# Personal / machine-specific output
+fix-guid-log.txt
+*-log.txt
+adnl_identify.txt
+
+# OS noise
+Thumbs.db
+desktop.ini
+.DS_Store
