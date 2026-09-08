@@ -2,9 +2,9 @@
 
 🇺🇸 [English version](../mirrors.md) · 📖 [README em português](../../README-PT-BR.md)
 
-Este repositório **não** hospeda a firmware. Veja [Por que a firmware não está hospedada aqui](../../README-PT-BR.md#por-que-a-firmware-não-está-hospedada-aqui) — em resumo: é firmware proprietária e assinada da Xiaomi e não temos direito de redistribuí-la.
+A firmware está espelhada nos **[Releases deste repositório](https://github.com/RodrigoDeveloperX/xiaomi-mi-tv-stick-4k-mdz-27-aa-recovery/releases/latest)** — download direto, sem cadastro. Ela continua sendo propriedade da Xiaomi e sai do ar caso a Xiaomi se oponha; veja [Sobre hospedar a firmware aqui](../../README-PT-BR.md#sobre-hospedar-a-firmware-aqui).
 
-O que podemos fazer é tornar verificável qualquer cópia que você encontre. Se estes valores baterem, você tem o arquivo certo, seja qual for a fonte:
+Esta página existe porque um espelho só não basta. O que ela faz é tornar verificável qualquer cópia que você encontre, aqui ou em qualquer outro lugar. Se estes valores baterem, você tem o arquivo certo, seja qual for a fonte:
 
 ```
 Nome    : mi-tv-stick-4k_dnl_1440_01.7z
@@ -24,6 +24,7 @@ Situação conforme observada em setembro de 2026. Links apodrecem; trate isto c
 
 | Fonte | URL | Observações |
 |---|---|---|
+| **Este repositório (Releases)** | [releases/latest](https://github.com/RodrigoDeveloperX/xiaomi-mi-tv-stick-4k-mdz-27-aa-recovery/releases/latest) | Download direto, sem conta, sem limite. Verificado depois do upload: o arquivo servido pelo GitHub produz o SHA-256 acima. O nome é `mi-tv-stick-4k_dnl_1440_01_MDZ-27-AA.7z` — mesmo pacote, com o modelo acrescentado. Espelhado para reparo de aparelho; sai do ar se a Xiaomi se opuser. |
 | **Yandex Disk** | <https://disk.yandex.ru/d/CW66IHxzsgpFHA> | O original. Atinge periodicamente o limite de downloads e recusa novos. Pode exigir conta no Yandex, e a criação de conta pode falhar onde a verificação por SMS não chega — foi o nosso caso, com número brasileiro. Esse é o gargalo que tornou o arquivo tão difícil de obter. |
 | **GSMForum** | <https://gsmforum.ru/resources/xiaomi-mi-tv-stick-4k-mdz-27-aa.12470/> | Página de recurso do MDZ-27-AA. Pode exigir cadastro. |
 | **FirmwareDrive** | <https://firmwaredrive.com/index.php?a=downloads&b=folder&id=47997> | Agregador de terceiros. |
@@ -58,6 +59,6 @@ Vamos adicionar as fontes que conferirem. Por favor não envie links de arquivos
 
 ### O que não vamos fazer
 
-- Hospedar a firmware aqui, em Releases ou via Git LFS. A questão de direitos não muda com o mecanismo de hospedagem.
+- Manter o espelho no ar contra a vontade da Xiaomi. Se vier um pedido de remoção, o arquivo sai — e esta página passa a ser a única forma de achar outra cópia, que é justamente para isso que ela serve.
 - Linkar para fontes que empacotam a firmware com instaladores, "gerenciadores de download" ou executáveis não relacionados.
 - Atestar a segurança de qualquer site de terceiros. Podemos dizer se os bytes são os bytes certos. Todo o resto sobre um espelho é julgamento seu.

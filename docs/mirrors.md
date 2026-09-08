@@ -2,9 +2,9 @@
 
 🇧🇷 [Versão em português](pt-br/espelhos.md) · 📖 [README](../README.md)
 
-This repository does **not** host the firmware. See [Why the firmware is not hosted here](../README.md#why-the-firmware-is-not-hosted-here) — short version: it is proprietary, signed Xiaomi firmware and we have no right to redistribute it.
+The firmware is mirrored in this repository's **[Releases](https://github.com/RodrigoDeveloperX/xiaomi-mi-tv-stick-4k-mdz-27-aa-recovery/releases/latest)** — direct download, no registration. It remains the property of Xiaomi and comes down if Xiaomi objects; see [About hosting the firmware here](../README.md#about-hosting-the-firmware-here).
 
-What we can do is make any copy you find verifiable. Match these and you have the right file, whatever the source:
+This page exists because one mirror is not enough. What it does is make any copy you find verifiable, here or anywhere else. Match these and you have the right file, whatever the source:
 
 ```
 Name    : mi-tv-stick-4k_dnl_1440_01.7z
@@ -24,6 +24,7 @@ Status as observed in September 2026. Links rot; treat this as a starting point,
 
 | Source | URL | Notes |
 |---|---|---|
+| **This repository (Releases)** | [releases/latest](https://github.com/RodrigoDeveloperX/xiaomi-mi-tv-stick-4k-mdz-27-aa-recovery/releases/latest) | Direct download, no account, no limit. Verified after upload: the file served by GitHub produces the SHA-256 above. Filename is `mi-tv-stick-4k_dnl_1440_01_MDZ-27-AA.7z` — same archive, model number appended. Mirrored for device repair; it comes down if Xiaomi objects. |
 | **Yandex Disk** | <https://disk.yandex.ru/d/CW66IHxzsgpFHA> | The original. Periodically hits its download limit and refuses new downloads. May require a Yandex account, and account creation can fail where SMS verification does not arrive — it did for us, on a Brazilian number. This is the bottleneck that made the file so hard to obtain. |
 | **GSMForum** | <https://gsmforum.ru/resources/xiaomi-mi-tv-stick-4k-mdz-27-aa.12470/> | MDZ-27-AA resource page. Registration may be required. |
 | **FirmwareDrive** | <https://firmwaredrive.com/index.php?a=downloads&b=folder&id=47997> | Third-party aggregator. |
@@ -58,6 +59,6 @@ We will add sources that verify. Please do not send links to files whose hash do
 
 ### What we will not do
 
-- Host the firmware here, in Releases, or through Git LFS. The rights question does not change with the hosting mechanism.
+- Keep the mirror up against Xiaomi's wishes. If a takedown arrives, the file goes — and this page becomes the only way to find another copy, which is exactly what it is for.
 - Link to sources that bundle the firmware with installers, "download managers", or unrelated executables.
 - Vouch for any third-party site's safety. We can tell you whether the bytes are the right bytes. Everything else about a mirror is your own judgement call.

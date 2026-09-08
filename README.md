@@ -161,11 +161,19 @@ Per-file SHA-256 for every one of these: [`docs/CHECKSUMS.md`](docs/CHECKSUMS.md
 
 ### Where to download it
 
-> **We do not host the firmware in this repository.** It is proprietary Xiaomi software and we have no right to redistribute it. See [Why the firmware is not hosted here](#why-the-firmware-is-not-hosted-here).
+> ### ⬇️ Direct download, no registration
+>
+> **[mi-tv-stick-4k_dnl_1440_01_MDZ-27-AA.7z](https://github.com/RodrigoDeveloperX/xiaomi-mi-tv-stick-4k-mdz-27-aa-recovery/releases/download/v1.0-firmware-1440/mi-tv-stick-4k_dnl_1440_01_MDZ-27-AA.7z)** — mirrored in this repository's [Releases](https://github.com/RodrigoDeveloperX/xiaomi-mi-tv-stick-4k-mdz-27-aa-recovery/releases/latest).
+>
+> 685,065,929 bytes · SHA-256 `6a54918cb8a07214374868e8bee5c4b02fbeba4a3a5100cb0541d2b74103b60b`
+>
+> No account, no download limit, no waiting. This is the same archive that circulates as `mi-tv-stick-4k_dnl_1440_01.7z` — only the filename differs. **Check the hash anyway**, from here or from anywhere else.
+
+Other sources, in case this mirror is ever removed:
 
 | Source | Notes |
 |---|---|
-| **Yandex Disk** — <https://disk.yandex.ru/d/CW66IHxzsgpFHA> | The original link this file came from. **It periodically hits its download limit** and refuses new downloads; a Yandex account may be required, and account signup can fail for phone numbers in some countries (it did for ours, on a Brazilian number). This was the single hardest part of the whole recovery. |
+| **Yandex Disk** — <https://disk.yandex.ru/d/CW66IHxzsgpFHA> | The original link this file came from. **It periodically hits its download limit** and refuses new downloads; a Yandex account may be required, and account signup can fail for phone numbers in some countries (it did for ours, on a Brazilian number). This was the single hardest part of the whole recovery, and the reason this repository mirrors the file at all. |
 | **GSMForum** — <https://gsmforum.ru/resources/xiaomi-mi-tv-stick-4k-mdz-27-aa.12470/> | Mirror of MDZ-27-AA material. Registration may be required. |
 | **FirmwareDrive** — <https://firmwaredrive.com/index.php?a=downloads&b=folder&id=47997> | Third-party aggregator. |
 | **4PDA thread** — <https://4pda.to/forum/index.php?showtopic=1041410&st=23820> | Where the file is discussed and where links surface when mirrors die. Registration required to see attachments. |
@@ -183,15 +191,19 @@ Per-file SHA-256 for every one of these: [`docs/CHECKSUMS.md`](docs/CHECKSUMS.md
 
 If you have a working mirror, please open an issue — see [`docs/mirrors.md`](docs/mirrors.md).
 
-### Why the firmware is not hosted here
+### About hosting the firmware here
 
-We considered it and decided against it, deliberately:
+Being straightforward about this, because it is someone else's software.
 
-- **Copyright.** `mi-tv-stick-4k_dnl_1440_01.7z` is stock, signed Xiaomi firmware (`release-keys`). We hold no redistribution rights and Xiaomi grants none. That is not changed by the file being hard to find.
-- **GitHub's terms.** Uploading third-party proprietary binaries invites a takedown, which would take the *documentation* down with it — and the documentation is the part we can legitimately offer.
-- **We did not work around it either.** Git LFS and Releases would technically fit a 685 MB file (Releases allows up to 2 GB per asset), but using them to sidestep a rights question would be the same violation with extra steps.
+`mi-tv-stick-4k_dnl_1440_01.7z` is stock, signed Xiaomi firmware (`release-keys`). **It remains the property of Xiaomi.** We hold no redistribution rights, we claim none, and nothing in this repository grants you any. The [MIT license](LICENSE) covers our documentation and scripts — never the firmware.
 
-What we publish instead is everything that makes an unknown copy of that file usable and trustworthy: exact name, exact size, SHA-256, MD5, internal structure, per-file hashes, and the full working procedure.
+It is mirrored here anyway, for one reason: the original source is a Yandex Disk link that keeps hitting its download limit, and people whose device is already dead were left with nowhere to get it. A stock recovery image is the only thing that brings an MDZ-27-AA back, and no official Xiaomi download exists for it.
+
+- **Purpose.** Device repair and preservation. This is not a modified build, a bypass, or anything that unlocks functionality you did not pay for — it is the software the device shipped with, offered to people trying to make their own hardware work again.
+- **If Xiaomi objects, it comes down.** No argument. Open an issue or contact the repository owner and the asset will be removed.
+- **The documentation stands on its own.** Should the file ever be taken down, everything that makes another copy usable stays here: exact name, exact size, SHA-256, MD5, internal structure, per-file hashes, and the full working procedure. [`docs/mirrors.md`](docs/mirrors.md) exists for exactly that scenario.
+
+**Verify the hash regardless of where you download from** — including from here. That is the part that actually protects you.
 
 ---
 
