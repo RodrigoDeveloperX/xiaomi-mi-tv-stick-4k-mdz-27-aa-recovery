@@ -1,5 +1,7 @@
 # Checksums
 
+🇧🇷 [Versão em português](pt-br/CHECKSUMS.md) · 📖 [README](../README.md)
+
 Every value here was computed on the actual files used in the successful recovery of a Xiaomi Mi TV Stick 4K (MDZ-27-AA) on 2026-09-08.
 
 Verify at least the archive before you flash anything. A truncated download written to a device that already will not boot is how a recoverable stick becomes an unrecoverable one.

@@ -1,5 +1,7 @@
 # Doing this with an AI assistant
 
+🇧🇷 [Versão em português](pt-br/PROMPT-IA.md) · 📖 [README](../README.md)
+
 The main [README](../README.md) is written so you can do everything by hand with nothing but Windows. This page is the other option: if you have an AI assistant with terminal access — Claude Code, Codex CLI, Gemini CLI, Cursor, or anything similar — it can handle the fiddly parts for you.
 
 **What it can do:** verify hashes, extract the archive, convert the sparse image, inspect the USB device state, apply the registry fix, run the flash, read the output and tell you what failed.

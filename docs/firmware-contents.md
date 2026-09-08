@@ -1,5 +1,7 @@
 # What is actually inside `mi-tv-stick-4k_dnl_1440_01.7z`
 
+🇧🇷 [Versão em português](pt-br/conteudo-firmware.md) · 📖 [README](../README.md)
+
 Everything on this page was read out of the archive itself. Nothing here is copied from a forum post. It exists so that someone who finds a copy of this file somewhere can tell whether it is the right one, and so that the claims in the README can be checked rather than trusted.
 
 ---

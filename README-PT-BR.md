@@ -52,7 +52,7 @@ Se você não está confortável com isso, pare por aqui e procure a garantia ou
 | Plataforma do SoC | Amlogic S4 (`ro.board.platform=s4`) |
 | Android | Android TV 11 |
 
-O codinome e a string de modelo acima foram lidos **diretamente das imagens de firmware deste pacote** (`ro.product.device=soul`, `ro.product.model=MiTV-AYFR0`), não copiados de fórum. Veja [`docs/firmware-contents.md`](docs/firmware-contents.md).
+O codinome e a string de modelo acima foram lidos **diretamente das imagens de firmware deste pacote** (`ro.product.device=soul`, `ro.product.model=MiTV-AYFR0`), não copiados de fórum. Veja [`docs/pt-br/conteudo-firmware.md`](docs/pt-br/conteudo-firmware.md).
 
 > O SoC normalmente citado para este aparelho é o **Amlogic S905Y4**. A firmware comprova apenas a família da plataforma (`s4`); o número exato da peça vem de especificações públicas, não destes arquivos.
 
@@ -109,7 +109,7 @@ Gravamos a imagem inteira por três portas USB diferentes do mesmo PC. A velocid
 
 > **Verifique o Zadig você mesmo.** Botão direito em `zadig-2.9.exe` → *Propriedades* → *Assinaturas Digitais*. Tem que estar assinado por **Akeo Consulting** e o Windows tem que reportar a assinatura como válida. A cópia que usamos mostrava exatamente isso.
 >
-> O `adnl.exe` e as DLLs ao lado dele (`AdbWinApi.dll`, `AdbWinUsbApi.dll`, `libwinpthread-1.dll`) **não têm assinatura digital**. Vêm de dentro de um pacote de firmware distribuído em fóruns, não conseguimos rastreá-los até uma página oficial da Amlogic, e deliberadamente **não** os espelhamos aqui. Os SHA-256 deles estão em [`docs/CHECKSUMS.md`](docs/CHECKSUMS.md) para que você ao menos confirme que sua cópia é a mesma que foi realmente usada. Passe um antivírus se isso importar para você.
+> O `adnl.exe` e as DLLs ao lado dele (`AdbWinApi.dll`, `AdbWinUsbApi.dll`, `libwinpthread-1.dll`) **não têm assinatura digital**. Vêm de dentro de um pacote de firmware distribuído em fóruns, não conseguimos rastreá-los até uma página oficial da Amlogic, e deliberadamente **não** os espelhamos aqui. Os SHA-256 deles estão em [`docs/pt-br/CHECKSUMS.md`](docs/pt-br/CHECKSUMS.md) para que você ao menos confirme que sua cópia é a mesma que foi realmente usada. Passe um antivírus se isso importar para você.
 
 ---
 
@@ -157,7 +157,7 @@ mi-tv-stick-4k_dnl_1440_01/
     └── vendor_boot.img                  25.165.824 bytes
 ```
 
-SHA-256 de cada um desses arquivos: [`docs/CHECKSUMS.md`](docs/CHECKSUMS.md).
+SHA-256 de cada um desses arquivos: [`docs/pt-br/CHECKSUMS.md`](docs/pt-br/CHECKSUMS.md).
 
 ### Onde baixar
 
@@ -172,7 +172,7 @@ SHA-256 de cada um desses arquivos: [`docs/CHECKSUMS.md`](docs/CHECKSUMS.md).
 
 **Seja qual for a fonte, confira o SHA-256 antes de gravar.** É exatamente para isso que o hash é publicado: um espelho que você nunca ouviu falar se torna seguro no momento em que os bytes batem.
 
-Se você tem um espelho funcionando, por favor abra uma issue — veja [`docs/mirrors.md`](docs/mirrors.md).
+Se você tem um espelho funcionando, por favor abra uma issue — veja [`docs/pt-br/espelhos.md`](docs/pt-br/espelhos.md).
 
 ### Por que a firmware não está hospedada aqui
 
@@ -477,7 +477,7 @@ powershell -ExecutionPolicy Bypass -File .\fix-adnl-guid.ps1
 
 ## O que mudamos em relação ao `go.cmd` original
 
-O `go.cmd` que vem dentro do pacote é em russo e faz essencialmente a coisa certa. Uma transcrição com tradução está em [`docs/original-go.cmd.md`](docs/original-go.cmd.md).
+O `go.cmd` que vem dentro do pacote é em russo e faz essencialmente a coisa certa. Uma transcrição com tradução está em [`docs/pt-br/go.cmd-original.md`](docs/pt-br/go.cmd-original.md).
 
 O nosso [`flash-dnl.cmd`](tools/flash-dnl.cmd) mantém a mesma ordem de partições e a mesma checagem de identidade, e difere exatamente nestes pontos:
 
@@ -553,7 +553,7 @@ Se o arquivo stock `1440` estiver realmente inacessível, o [yuliitezarygml/xiao
 
 Tudo acima foi escrito para ser feito na mão, apenas com o que já vem no Windows. Se você tiver um assistente de IA com acesso ao terminal, ele consegue conduzir a maior parte — conferir hashes, converter, diagnosticar o estado do USB, ler a saída.
 
-Um prompt pronto está em **[`docs/AI-ASSISTANT-PROMPT.md`](docs/AI-ASSISTANT-PROMPT.md)**. Cole no assistente, na pasta onde você extraiu a firmware.
+Um prompt pronto está em **[`docs/pt-br/PROMPT-IA.md`](docs/pt-br/PROMPT-IA.md)**. Cole no assistente, na pasta onde você extraiu a firmware.
 
 O assistente ainda não consegue conectar o cabo por você, e a regra de ordem do [Passo 4](#passo-4--gravar) continua valendo.
 

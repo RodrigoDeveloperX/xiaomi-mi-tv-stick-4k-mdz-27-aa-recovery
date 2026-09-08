@@ -1,5 +1,7 @@
 # The original `go.cmd`, transcribed and translated
 
+🇧🇷 [Versão em português](pt-br/go.cmd-original.md) · 📖 [README](../README.md)
+
 `go.cmd` ships inside `mi-tv-stick-4k_dnl_1440_01.7z`, at the root of the extracted folder. It is a 1,560-byte Windows batch file written in Russian, encoded in **CP866** (the Russian OEM code page) so that the console renders it correctly.
 
 It is reproduced here for reference and attribution: it is the source of the partition order this repository follows, and of the identity check that protects you from flashing the wrong device. Credit for the sequence goes to whoever assembled that package.

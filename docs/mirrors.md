@@ -1,5 +1,7 @@
 # Mirrors for `mi-tv-stick-4k_dnl_1440_01.7z`
 
+🇧🇷 [Versão em português](pt-br/espelhos.md) · 📖 [README](../README.md)
+
 This repository does **not** host the firmware. See [Why the firmware is not hosted here](../README.md#why-the-firmware-is-not-hosted-here) — short version: it is proprietary, signed Xiaomi firmware and we have no right to redistribute it.
 
 What we can do is make any copy you find verifiable. Match these and you have the right file, whatever the source:
