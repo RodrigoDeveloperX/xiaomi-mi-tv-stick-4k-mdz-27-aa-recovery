@@ -172,6 +172,15 @@ SHA-256 de cada um desses arquivos: [`docs/pt-br/CHECKSUMS.md`](docs/pt-br/CHECK
 
 **Seja qual for a fonte, confira o SHA-256 antes de gravar.** É exatamente para isso que o hash é publicado: um espelho que você nunca ouviu falar se torna seguro no momento em que os bytes batem.
 
+> **Você pode encontrar este arquivo com um nome um pouco diferente.** Alguns espelhos acrescentam o número do modelo:
+>
+> ```
+> mi-tv-stick-4k_dnl_1440_01.7z            ← nome usado pelas fontes originais
+> mi-tv-stick-4k_dnl_1440_01_MDZ-27-AA.7z  ← mesmo arquivo, com o modelo no fim
+> ```
+>
+> **São o mesmo pacote.** Renomear um arquivo não muda o conteúdo dele, então os dois têm que dar o SHA-256 `6a54918c…03b60b`. É o hash que diz se o arquivo está certo; o nome nunca diz.
+
 Se você tem um espelho funcionando, por favor abra uma issue — veja [`docs/pt-br/espelhos.md`](docs/pt-br/espelhos.md).
 
 ### Por que a firmware não está hospedada aqui

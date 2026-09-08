@@ -172,6 +172,15 @@ Per-file SHA-256 for every one of these: [`docs/CHECKSUMS.md`](docs/CHECKSUMS.md
 
 **Whatever source you use, check the SHA-256 before flashing.** That is the entire point of publishing the hash: a mirror you have never heard of becomes safe to use the moment its bytes match.
 
+> **You may find this file under a slightly different name.** Some mirrors append the model number:
+>
+> ```
+> mi-tv-stick-4k_dnl_1440_01.7z            ← name used by the original sources
+> mi-tv-stick-4k_dnl_1440_01_MDZ-27-AA.7z  ← same file, model appended
+> ```
+>
+> **These are the same archive.** Renaming a file does not change its contents, so both must produce the SHA-256 `6a54918c…03b60b`. The hash is what tells you the file is right; the name never does.
+
 If you have a working mirror, please open an issue — see [`docs/mirrors.md`](docs/mirrors.md).
 
 ### Why the firmware is not hosted here

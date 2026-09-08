@@ -8,10 +8,13 @@ What we can do is make any copy you find verifiable. Match these and you have th
 
 ```
 Name    : mi-tv-stick-4k_dnl_1440_01.7z
+          mi-tv-stick-4k_dnl_1440_01_MDZ-27-AA.7z   (same file, seen on some mirrors)
 Size    : 685065929 bytes
 SHA-256 : 6a54918cb8a07214374868e8bee5c4b02fbeba4a3a5100cb0541d2b74103b60b
 MD5     : ffb220dd62cbff01f6e39461cd0154d1
 ```
+
+**Do not judge a copy by its filename.** Mirrors rename files all the time — appending the model number, stripping the suffix, adding a version. Renaming changes nothing inside the archive, so the hash stays identical. A file with the right hash is the right file no matter what it is called, and a file with the wrong hash is the wrong file no matter how right the name looks.
 
 ---
 

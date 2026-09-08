@@ -8,10 +8,13 @@ O que podemos fazer é tornar verificável qualquer cópia que você encontre. S
 
 ```
 Nome    : mi-tv-stick-4k_dnl_1440_01.7z
+          mi-tv-stick-4k_dnl_1440_01_MDZ-27-AA.7z   (mesmo arquivo, em alguns espelhos)
 Tamanho : 685065929 bytes
 SHA-256 : 6a54918cb8a07214374868e8bee5c4b02fbeba4a3a5100cb0541d2b74103b60b
 MD5     : ffb220dd62cbff01f6e39461cd0154d1
 ```
+
+**Não julgue uma cópia pelo nome do arquivo.** Espelhos renomeiam arquivos o tempo todo — acrescentando o modelo, tirando o sufixo, colocando uma versão. Renomear não muda nada dentro do pacote, então o hash continua idêntico. Um arquivo com o hash certo é o arquivo certo, não importa como se chame; e um arquivo com o hash errado é o arquivo errado, por mais certo que o nome pareça.
 
 ---
 
