@@ -6,12 +6,56 @@ Recuperação de um **Xiaomi Mi TV Stick 4K (MDZ-27-AA)** que estava **travado n
 
 ---
 
+## Qual brick é o seu?
+
+Existem **dois bricks diferentes** neste aparelho, eles são idênticos na TV
+(parado no logo Mi), e pedem curas **opostas**. Gravar o errado custa dias — custou aqui.
+
+Distinga com dois comandos, antes de gravar qualquer coisa:
+
+```
+fastboot reboot bootloader          # a partir do estado Amlogic/DNL
+fastboot getvar version-bootloader
+```
+
+| `version-bootloader` | Seu bootloader é | Faça isto |
+|---|---|---|
+| `0.1`, e `getvar product` diz `amlogic` | você ainda está no **primeiro** estágio do fastboot | veja [Os dois estágios do fastboot](docs/pt-br/recuperacao-android-14.md#os-dois-estágios-do-fastboot) |
+| `01.01.25xxxx` ou `01.01.26xxxx`, `product` diz `soul` | **Android 14** | **[recuperação Android 14](docs/pt-br/recuperacao-android-14.md)** — o procedimento desta página nunca vai bootar |
+| sem bootloader Android 14, aparelho estava no Android 11 | Android 11 | o procedimento desta página |
+
+**Por que isso importa.** Se o seu stick recebeu a OTA de Android 11 → Android 14 e
+ela falhou no meio, o bootloader já é Android 14 enquanto o resto do sistema não é.
+Gravar firmware Android 11 por cima disso produz uma gravação perfeitamente limpa e
+um aparelho que continua não bootando — todas as vezes. As partições `bootloader` e
+`reserved` **não aceitam escrita por DNL** neste aparelho, então não dá para voltar
+ao Android 11. É preciso ir para frente, para o Android 14.
+
+O post das firmwares no 4PDA diz isso com todas as letras, acima das imagens de
+Android 11: *"Не подходит для отката с 14-го андроида!"* — não serve para voltar do
+Android 14.
+
+---
+
 ## ⚠️ Leia isto antes de qualquer coisa
 
 **Isto é o relato de uma recuperação real que deu certo. Não é um produto e não é uma garantia.**
 
-- O aparelho estava **travado na tela de boot** e não iniciava. Depois deste procedimento, voltou a funcionar normalmente.
-- Tudo aqui foi **executado de verdade em 08/09/2026**, em um MDZ-27-AA. A saída completa da ferramenta está em [`logs/successful-flash-2026-09-08.log`](logs/successful-flash-2026-09-08.log) — 16 etapas, todas com `rc=0`.
+> ### 🛑 CORREÇÃO — 10/09/2026
+>
+> **O procedimento de Android 11 abaixo gravou sem erros, mas NÃO fez o aparelho bootar.**
+> Uma versão anterior desta página afirmava que sim. A afirmação estava errada: foi
+> escrita a partir de um log verde (16/16 etapas, todas com `rc=0`) *antes* de o
+> aparelho ser testado numa TV. Ele ficou 1h30 parado no logo Mi, e mais uma hora
+> inteira no dia seguinte.
+>
+> O aparelho só foi recuperado em **10/09/2026**, por um método completamente
+> diferente — **[recuperação Android 14](docs/pt-br/recuperacao-android-14.md)**.
+>
+> **Antes de gravar qualquer coisa, descubra qual dos dois bricks você tem.**
+> Eles pedem curas opostas. Veja [Qual brick é o seu?](#qual-brick-é-o-seu)
+
+- Tudo aqui foi **executado de verdade** em um MDZ-27-AA. O log da gravação Android 11 está em [`logs/flash-2026-09-08-did-not-boot.log`](logs/flash-2026-09-08-did-not-boot.log) — 16 etapas, todas com `rc=0`, e o aparelho continuou sem bootar. A recuperação que funcionou está em [`logs/successful-flash-a14-2026-09-10.log`](logs/successful-flash-a14-2026-09-10.log) — 18 etapas, 0 falhas.
 - Isto é publicado como **um apoio de último recurso para quem já está com problema e não encontrou solução em lugar nenhum**. Se o seu stick ainda liga normalmente, você quase certamente não precisa disto.
 - **Não nos responsabilizamos por qualquer falha, dano, perda de dados ou aparelho inutilizado** decorrente de alguém seguir estas anotações. Você faz isso por sua conta e risco, no seu próprio hardware, por decisão sua.
 - Ninguém pode chamar um procedimento desses de "100% seguro". Ele **apaga o aparelho inteiro**, depende da sua revisão específica de hardware, e uma gravação interrompida no meio deixa o aparelho sem dar boot até que você repita tudo com sucesso.

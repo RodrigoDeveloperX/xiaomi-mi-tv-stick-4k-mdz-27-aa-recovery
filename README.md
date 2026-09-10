@@ -10,13 +10,58 @@ Recovering a **Xiaomi Mi TV Stick 4K (MDZ-27-AA)** that was **stuck on the boot 
 
 **This is a report of one real recovery that worked, not a product and not a guarantee.**
 
-- The device in question was **stuck on the boot screen** and would not start. After this procedure it booted normally.
-- Everything here was **executed for real on 2026-09-08** on one MDZ-27-AA. The complete tool output is in [`logs/successful-flash-2026-09-08.log`](logs/successful-flash-2026-09-08.log) — 16 steps, every one returning `rc=0`.
+> ### 🛑 CORRECTION — 2026-09-10
+>
+> **The Android 11 procedure below flashed cleanly but did NOT make the device boot.**
+> An earlier version of this page claimed it did. That claim was wrong: it was
+> written from a green log (16/16 steps, every one `rc=0`) *before* the device was
+> actually tested on a TV. It then sat on the Mi logo for 1h30, and again for a
+> full hour the next day.
+>
+> The device was finally recovered on **2026-09-10**, with a completely different
+> method — **[Android 14 recovery](docs/android-14-recovery.md)**.
+>
+> **Before you flash anything, find out which of the two bricks you have.**
+> They need opposite fixes. See [Which brick do you have?](#which-brick-do-you-have)
+
+- Everything here was **executed for real** on one MDZ-27-AA. The Android 11 flash log is in [`logs/flash-2026-09-08-did-not-boot.log`](logs/flash-2026-09-08-did-not-boot.log) — 16 steps, every one `rc=0`, and the device still did not boot. The recovery that worked is in [`logs/successful-flash-a14-2026-09-10.log`](logs/successful-flash-a14-2026-09-10.log) — 18 steps, 0 failures.
 - It is published as **a last-resort aid for people who are already stuck and have found nothing else**. If your stick still boots, you almost certainly do not need this.
 - **We take no responsibility for any failure, damage, data loss or permanently bricked device** resulting from anyone following these notes. You do this at your own risk, on your own hardware, by your own decision.
 - Nobody can call a procedure like this "100% safe". It **erases the entire device**, it depends on your specific hardware revision, and a flash interrupted halfway leaves the device unbootable until you run it again successfully.
 
 If you are not comfortable with that, stop here and use the manufacturer's warranty or service channel instead.
+
+---
+
+## Which brick do you have?
+
+There are **two different bricks** on this device, they look identical on the TV
+(stuck on the Mi logo), and they need **opposite** fixes. Flashing the wrong one
+wastes days — it did here.
+
+Tell them apart with two commands, before flashing anything:
+
+```
+fastboot reboot bootloader          # from the Amlogic/DNL state
+fastboot getvar version-bootloader
+```
+
+| `version-bootloader` | Your bootloader is | Do this |
+|---|---|---|
+| `0.1`, and `getvar product` says `amlogic` | you are still in the **first** fastboot stage | see [The two fastboot stages](docs/android-14-recovery.md#the-two-fastboot-stages) |
+| `01.01.25xxxx` or `01.01.26xxxx`, `product` says `soul` | **Android 14** | **[Android 14 recovery](docs/android-14-recovery.md)** — the Android 11 procedure on this page will never boot |
+| no Android 14 bootloader, device was on Android 11 | Android 11 | the procedure on this page |
+
+**Why this matters.** If your stick took the Android 11 → Android 14 OTA and it
+failed partway, the bootloader is already Android 14 while the rest of the system
+is not. Writing Android 11 firmware over that produces a perfectly clean flash and
+a device that still does not boot — every time. The `bootloader` and `reserved`
+partitions **cannot be rewritten over DNL** on this device, so you cannot bring it
+back to Android 11. You have to go forward to Android 14.
+
+The 4PDA firmware post states this outright, above the Android 11 images:
+*"Не подходит для отката с 14-го андроида!"* — not suitable for rolling back from
+Android 14.
 
 ---
 

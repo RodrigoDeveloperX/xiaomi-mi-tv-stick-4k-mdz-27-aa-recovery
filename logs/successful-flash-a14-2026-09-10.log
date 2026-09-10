@@ -1,0 +1,198 @@
+===== GO-A14  V816.0.26.6.10  16:11:05 =====
+barramento: 
+
+>>> testando se o aparelho responde...
+    [tentativa 1] DESCONECTE o stick do USB.
+    saiu do barramento apos 3s
+    fastboot no ar. RECONECTE o stick agora.
+--- fastboot reboot bootloader (tentativa 1) ---
+< waiting for any device >
+Rebooting into bootloader                          OKAY [  0.001s]
+Finished. Total time: 0.001s
+[rc=0]
+    2o estagio apos 2s
+    product = soul
+    is-userspace = no  (o oficial exige 'no')
+    version-bootloader = 01.01.260610.084506
+
+[1 16:11:30] fastboot flashing unlock
+--- fastboot flashing unlock ---
+OKAY [  0.012s]
+Finished. Total time: 0.012s
+[rc=0]
+[2 16:11:31] fastboot flashing unlock_critical
+--- fastboot flashing unlock_critical ---
+OKAY [  0.009s]
+Finished. Total time: 0.009s
+[rc=0]
+    unlocked = yes
+
+>>> gravando. NAO desconecte ate o fim.
+[3 16:11:33] fastboot flash bootloader images/bootloader.img
+--- fastboot flash bootloader images/bootloader.img ---
+Warning: skip copying bootloader image avb footer (bootloader partition size: 0, bootloader image size: 4100096).
+Sending 'bootloader' (4004 KB)                     OKAY [  0.192s]
+Writing 'bootloader'                               OKAY [  0.377s]
+Finished. Total time: 0.603s
+[rc=0]
+[4 16:11:34] fastboot --slot all flash dtbo images/dtbo.img
+--- fastboot --slot all flash dtbo images/dtbo.img ---
+Sending 'dtbo_a' (2048 KB)                         OKAY [  0.099s]
+Writing 'dtbo_a'                                   OKAY [  0.070s]
+Sending 'dtbo_b' (2048 KB)                         OKAY [  0.099s]
+Writing 'dtbo_b'                                   OKAY [  0.075s]
+Finished. Total time: 0.390s
+[rc=0]
+[5 16:11:35] fastboot --slot all flash oem images/oem.img
+--- fastboot --slot all flash oem images/oem.img ---
+Sending 'oem_a' (32768 KB)                         OKAY [  1.571s]
+Writing 'oem_a'                                    OKAY [  1.000s]
+Sending 'oem_b' (32768 KB)                         OKAY [  1.588s]
+Writing 'oem_b'                                    OKAY [  1.001s]
+Finished. Total time: 5.214s
+[rc=0]
+[6 16:11:41] fastboot --slot all flash odm_ext images/odm_ext.img
+--- fastboot --slot all flash odm_ext images/odm_ext.img ---
+Sending 'odm_ext_a' (16384 KB)                     OKAY [  0.790s]
+Writing 'odm_ext_a'                                OKAY [  0.519s]
+Sending 'odm_ext_b' (16384 KB)                     OKAY [  0.786s]
+Writing 'odm_ext_b'                                OKAY [  0.491s]
+Finished. Total time: 2.641s
+[rc=0]
+[7 16:11:44] fastboot --slot all flash vbmeta images/vbmeta.img
+--- fastboot --slot all flash vbmeta images/vbmeta.img ---
+Sending 'vbmeta_a' (2048 KB)                       OKAY [  0.098s]
+Writing 'vbmeta_a'                                 OKAY [  0.076s]
+Sending 'vbmeta_b' (2048 KB)                       OKAY [  0.100s]
+Writing 'vbmeta_b'                                 OKAY [  0.079s]
+Finished. Total time: 0.411s
+[rc=0]
+[8 16:11:45] fastboot --slot all flash vbmeta_system images/vbmeta_system.img
+--- fastboot --slot all flash vbmeta_system images/vbmeta_system.img ---
+Sending 'vbmeta_system_a' (2048 KB)                OKAY [  0.099s]
+Writing 'vbmeta_system_a'                          OKAY [  0.076s]
+Sending 'vbmeta_system_b' (2048 KB)                OKAY [  0.098s]
+Writing 'vbmeta_system_b'                          OKAY [  0.076s]
+Finished. Total time: 0.412s
+[rc=0]
+[9 16:11:46] fastboot --slot all flash vendor_boot images/vendor_boot.img
+--- fastboot --slot all flash vendor_boot images/vendor_boot.img ---
+Sending 'vendor_boot_a' (24576 KB)                 OKAY [  1.171s]
+Writing 'vendor_boot_a'                            OKAY [  0.784s]
+Sending 'vendor_boot_b' (24576 KB)                 OKAY [  1.180s]
+Writing 'vendor_boot_b'                            OKAY [  0.791s]
+Finished. Total time: 3.971s
+[rc=0]
+[10 16:11:50] fastboot --slot all flash boot images/boot.img
+--- fastboot --slot all flash boot images/boot.img ---
+Sending 'boot_a' (65536 KB)                        OKAY [  3.161s]
+Writing 'boot_a'                                   OKAY [  1.998s]
+Sending 'boot_b' (65536 KB)                        OKAY [  3.207s]
+Writing 'boot_b'                                   OKAY [  1.997s]
+Finished. Total time: 10.420s
+[rc=0]
+    (a super tem 1,8 GB e leva varios minutos)
+[11 16:12:01] fastboot flash super images/super.img
+--- fastboot flash super images/super.img ---
+Invalid sparse file format at header magic
+Sending sparse 'super' 1/11 (116264 KB)            OKAY [  5.624s]
+Writing 'super'                                    OKAY [  3.590s]
+Sending sparse 'super' 2/11 (131068 KB)            OKAY [  6.338s]
+Writing 'super'                                    OKAY [  4.008s]
+Sending sparse 'super' 3/11 (131068 KB)            OKAY [  6.340s]
+Writing 'super'                                    OKAY [  4.004s]
+Sending sparse 'super' 4/11 (131068 KB)            OKAY [  6.387s]
+Writing 'super'                                    OKAY [  3.994s]
+Sending sparse 'super' 5/11 (131068 KB)            OKAY [  6.362s]
+Writing 'super'                                    OKAY [  3.998s]
+Sending sparse 'super' 6/11 (131068 KB)            OKAY [  6.306s]
+Writing 'super'                                    OKAY [  4.142s]
+Sending sparse 'super' 7/11 (131068 KB)            OKAY [  6.313s]
+Writing 'super'                                    OKAY [  4.040s]
+Sending sparse 'super' 8/11 (131068 KB)            OKAY [  6.292s]
+Writing 'super'                                    OKAY [  3.767s]
+Sending sparse 'super' 9/11 (131068 KB)            OKAY [  6.312s]
+Writing 'super'                                    OKAY [  3.772s]
+Sending sparse 'super' 10/11 (131068 KB)           OKAY [  6.323s]
+Writing 'super'                                    OKAY [  4.075s]
+Sending sparse 'super' 11/11 (42700 KB)            OKAY [  2.051s]
+Writing 'super'                                    OKAY [ 16.892s]
+Finished. Total time: 123.173s
+[rc=0]
+
+[12 16:14:05] fastboot flashing lock
+--- fastboot flashing lock ---
+OKAY [  0.054s]
+Finished. Total time: 0.054s
+[rc=0]
+[13 16:14:05] fastboot flashing lock_critical
+--- fastboot flashing lock_critical ---
+OKAY [  0.008s]
+Finished. Total time: 0.009s
+[rc=0]
+
+>>> segunda etapa: slots e wipe
+--- fastboot reboot bootloader ---
+Rebooting into bootloader                          OKAY [  0.000s]
+Finished. Total time: 0.001s
+[rc=0]
+    version-bootloader = 01.01.260610.084506
+[14 16:14:13] fastboot flashing unlock
+--- fastboot flashing unlock ---
+OKAY [  0.053s]
+Finished. Total time: 0.053s
+[rc=0]
+[15 16:14:14] fastboot set_active other
+--- fastboot set_active other ---
+Setting current slot to 'b'                        OKAY [  0.007s]
+Finished. Total time: 0.011s
+[rc=0]
+[16 16:14:15] fastboot set_active other
+--- fastboot set_active other ---
+Setting current slot to 'a'                        OKAY [  0.006s]
+Finished. Total time: 0.010s
+[rc=0]
+    (o -w apaga a userdata; e' o reset de fabrica)
+[17 16:14:16] fastboot -w
+--- fastboot -w ---
+Erasing 'userdata'                                 OKAY [  0.032s]
+mke2fs 1.47.2 (1-Jan-2025)
+Creating filesystem with 1260032 4k blocks and 315120 inodes
+Filesystem UUID: d1cee4f2-ad4b-11f1-a2bc-bd6297b50020
+Superblock backups stored on blocks: 
+	32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Allocating group tables:  0/39     done                            
+Writing inode tables:  0/39     done                            
+Creating journal (16384 blocks): done
+Writing superblocks and filesystem accounting information:  0/39     done
+
+Warning: skip copying userdata image avb footer due to sparse image.
+Sending 'userdata' (136 KB)                        OKAY [  0.008s]
+Writing 'userdata'                                 OKAY [  0.001s]
+wipe task partition not found: cache
+Erasing 'metadata'                                 OKAY [  0.016s]
+mke2fs 1.47.2 (1-Jan-2025)
+128-byte inodes cannot handle dates beyond 2038 and are deprecated
+Creating filesystem with 4096 4k blocks and 4096 inodes
+
+Allocating group tables: 0/1   done                            
+Writing inode tables: 0/1   done                            
+Creating journal (1024 blocks): done
+Writing superblocks and filesystem accounting information: 0/1   done
+
+Warning: skip copying metadata image avb footer due to sparse image.
+Sending 'metadata' (44 KB)                         OKAY [  0.003s]
+Writing 'metadata'                                 OKAY [  0.017s]
+Finished. Total time: 1.163s
+[rc=0]
+[18 16:14:18] fastboot flashing lock
+--- fastboot flashing lock ---
+OKAY [  0.049s]
+Finished. Total time: 0.049s
+[rc=0]
+
+===== FIM: 18 etapas, 0 falha(s) =====
+Tire o stick do PC, ligue na TV com carregador de tomada e espere ate
+10 minutos no primeiro boot.
+log: /d/PROJECT/logs/go-a14-20260910-161104.txt
