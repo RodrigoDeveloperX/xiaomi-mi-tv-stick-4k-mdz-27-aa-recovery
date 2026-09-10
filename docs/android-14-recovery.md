@@ -5,7 +5,7 @@
 For a **Xiaomi Mi TV Stick 4K (MDZ-27-AA / `soul`)** whose Android 11 → Android 14
 OTA failed partway, leaving it stuck on the Mi logo.
 
-Executed for real on **2026-09-10**: 18 steps, 0 failures, device booted.
+Executed for real on **2026-09-10**: 18 steps, 0 failures, device booted — and **confirmed working on a TV**: it reached the Android TV home screen and completed setup normally.
 Full output: [`../logs/successful-flash-a14-2026-09-10.log`](../logs/successful-flash-a14-2026-09-10.log)
 
 ---
@@ -171,6 +171,12 @@ A booted device enumerates on USB as `VID_18D1&PID_4EE1` with the friendly name
 running even without a TV to look at. A device that did **not** boot comes back as
 `VID_1B8E&PID_C004` (DNL).
 
+> ### ✅ Confirmed end to end (2026-09-10)
+>
+> On a real TV the stick booted all the way to the **Android TV home screen** and
+> completed the initial setup normally. This is the full recovery, not just a USB
+> sign of life. Security patch level after recovery: 2026-05-01.
+
 ### If it still hangs on the logo
 
 Go back to the 2nd stage and switch slots — the two published reports contradict each
@@ -189,8 +195,19 @@ fastboot reboot
 
 ### The fastboot package (preferred)
 
-`mi-tv-stick-4k_14_26.6.10_91.7z` — Yandex Disk, from the 4PDA thread:
-`https://disk.yandex.ru/d/9toYWX5hWET-wQ`
+> ### ⬇️ Direct download, no registration
+>
+> **[mi-tv-stick-4k_14_26.6.10_91_MDZ-27-AA.7z](https://github.com/RodrigoDeveloperX/xiaomi-mi-tv-stick-4k-mdz-27-aa-recovery/releases/download/v2.0-firmware-a14-26.6.10/mi-tv-stick-4k_14_26.6.10_91_MDZ-27-AA.7z)** — mirrored in this
+> repository's [Releases](https://github.com/RodrigoDeveloperX/xiaomi-mi-tv-stick-4k-mdz-27-aa-recovery/releases/latest).
+>
+> 989,694,390 bytes · SHA-256 `6300f49e9e15ba50e4b6bc9ea7f3243b80178c122b08a440a5e144b8ea6f6711`
+>
+> No account, no download limit, no waiting. This is the exact Android 14 fastboot
+> package that recovered the device in this repository. **Check the hash anyway.**
+
+Original source, if the mirror is ever removed — `mi-tv-stick-4k_14_26.6.10_91.7z`
+on Yandex Disk, from the 4PDA thread: `https://disk.yandex.ru/d/9toYWX5hWET-wQ`
+(this public link is frequently over its download quota).
 
 Older Android 14 builds, same generation, also usable:
 

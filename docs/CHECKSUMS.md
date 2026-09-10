@@ -44,6 +44,25 @@ Case does not matter. If either hash differs, discard the file and download it a
 
 ---
 
+## The Android 14 firmware archive (the recovery that worked)
+
+```
+mi-tv-stick-4k_14_26.6.10_91.7z
+```
+
+The official Android 14 fastboot package — build `V816.0.26.6.10` (`UKG3.250107.001`) — that recovered the device on 2026-09-10 and was **confirmed booting to the Android TV home screen on a TV**. Mirrored in this repository's [Releases](https://github.com/RodrigoDeveloperX/xiaomi-mi-tv-stick-4k-mdz-27-aa-recovery/releases/latest) as `mi-tv-stick-4k_14_26.6.10_91_MDZ-27-AA.7z` (same bytes, model appended to the name).
+
+| | |
+|---|---|
+| **Size** | **989,694,390 bytes** |
+| **SHA-256** | `6300f49e9e15ba50e4b6bc9ea7f3243b80178c122b08a440a5e144b8ea6f6711` |
+| **MD5** | `45e8daf80b2abd2f0261f5ff24e98b45` |
+| Method | fastboot (2nd stage) — needs the Google USB driver, not `adnl` |
+
+Independently verified: `bootloader`, `boot`, `dtbo`, `oem`, `odm_ext` and all eight logical partitions inside its `super.img` are byte-for-byte identical to Google's official OTA of the same build. See [Android 14 recovery](android-14-recovery.md).
+
+---
+
 ## Files inside the archive
 
 Paths are relative to `mi-tv-stick-4k_dnl_1440_01/` inside the `.7z`. Timestamps are as recorded in the archive.

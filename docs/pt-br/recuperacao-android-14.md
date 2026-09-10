@@ -5,7 +5,7 @@
 Para um **Xiaomi Mi TV Stick 4K (MDZ-27-AA / `soul`)** cuja OTA de Android 11 → 14
 falhou no meio, deixando o aparelho parado no logo Mi.
 
-Executado de verdade em **10/09/2026**: 18 etapas, 0 falhas, aparelho bootou.
+Executado de verdade em **10/09/2026**: 18 etapas, 0 falhas, aparelho bootou — e **confirmado funcionando na TV**: chegou à tela inicial do Android TV e completou a configuração normalmente.
 Saída completa: [`../../logs/successful-flash-a14-2026-09-10.log`](../../logs/successful-flash-a14-2026-09-10.log)
 
 ---
@@ -170,6 +170,12 @@ Um aparelho que bootou enumera no USB como `VID_18D1&PID_4EE1`, com o nome amig�
 rodando mesmo sem uma TV para olhar. Um aparelho que **não** bootou volta como
 `VID_1B8E&PID_C004` (DNL).
 
+> ### ✅ Confirmado de ponta a ponta (10/09/2026)
+>
+> Numa TV de verdade o stick bootou até a **tela inicial do Android TV** e completou
+> a configuração inicial normalmente. Esta é a recuperação completa, não só um sinal
+> de vida pelo USB. Nível do patch de segurança após a recuperação: 01/05/2026.
+
 ### Se continuar parado no logo
 
 Volte ao 2º estágio e troque de slot — os dois relatos publicados se contradizem sobre
@@ -188,8 +194,19 @@ fastboot reboot
 
 ### O pacote fastboot (preferencial)
 
-`mi-tv-stick-4k_14_26.6.10_91.7z` — Yandex Disk, do tópico do 4PDA:
-`https://disk.yandex.ru/d/9toYWX5hWET-wQ`
+> ### ⬇️ Download direto, sem cadastro
+>
+> **[mi-tv-stick-4k_14_26.6.10_91_MDZ-27-AA.7z](https://github.com/RodrigoDeveloperX/xiaomi-mi-tv-stick-4k-mdz-27-aa-recovery/releases/download/v2.0-firmware-a14-26.6.10/mi-tv-stick-4k_14_26.6.10_91_MDZ-27-AA.7z)** — espelhado nos
+> [Releases](https://github.com/RodrigoDeveloperX/xiaomi-mi-tv-stick-4k-mdz-27-aa-recovery/releases/latest) deste repositório.
+>
+> 989.694.390 bytes · SHA-256 `6300f49e9e15ba50e4b6bc9ea7f3243b80178c122b08a440a5e144b8ea6f6711`
+>
+> Sem conta, sem limite de download, sem espera. É exatamente o pacote fastboot de
+> Android 14 que recuperou o aparelho deste repositório. **Confira o hash mesmo assim.**
+
+Fonte original, caso o espelho seja removido — `mi-tv-stick-4k_14_26.6.10_91.7z`
+no Yandex Disk, do tópico do 4PDA: `https://disk.yandex.ru/d/9toYWX5hWET-wQ`
+(esse link público vive acima da cota de download).
 
 Builds Android 14 mais antigas, mesma geração, também servem:
 

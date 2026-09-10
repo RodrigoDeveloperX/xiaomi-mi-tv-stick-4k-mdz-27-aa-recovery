@@ -35,6 +35,16 @@ Not sure which one you have? [One command tells you.](#which-brick-do-you-have)
 > **Before you flash anything, find out which of the two bricks you have.**
 > They need opposite fixes. See [Which brick do you have?](#which-brick-do-you-have)
 
+> ### ✅ CONFIRMED — 2026-09-10
+>
+> The Android 14 recovery **worked end to end**: on a real TV the device booted to
+> the Android TV home screen and completed setup normally — not just a USB sign of
+> life. The firmware that did it is mirrored here for **direct download, no
+> registration**:
+> **[mi-tv-stick-4k_14_26.6.10_91_MDZ-27-AA.7z](https://github.com/RodrigoDeveloperX/xiaomi-mi-tv-stick-4k-mdz-27-aa-recovery/releases/download/v2.0-firmware-a14-26.6.10/mi-tv-stick-4k_14_26.6.10_91_MDZ-27-AA.7z)**
+> (989,694,390 bytes · SHA-256 `6300f49e9e15ba50e4b6bc9ea7f3243b80178c122b08a440a5e144b8ea6f6711`).
+> Full method: **[Android 14 recovery](docs/android-14-recovery.md)**.
+
 - Everything here was **executed for real** on one MDZ-27-AA. The Android 11 flash log is in [`logs/flash-2026-09-08-did-not-boot.log`](logs/flash-2026-09-08-did-not-boot.log) — 16 steps, every one `rc=0`, and the device still did not boot. The recovery that worked is in [`logs/successful-flash-a14-2026-09-10.log`](logs/successful-flash-a14-2026-09-10.log) — 18 steps, 0 failures.
 - It is published as **a last-resort aid for people who are already stuck and have found nothing else**. If your stick still boots, you almost certainly do not need this.
 - **We take no responsibility for any failure, damage, data loss or permanently bricked device** resulting from anyone following these notes. You do this at your own risk, on your own hardware, by your own decision.

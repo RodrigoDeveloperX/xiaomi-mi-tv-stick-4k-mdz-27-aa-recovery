@@ -66,6 +66,16 @@ Android 14.
 > **Antes de gravar qualquer coisa, descubra qual dos dois bricks você tem.**
 > Eles pedem curas opostas. Veja [Qual brick é o seu?](#qual-brick-é-o-seu)
 
+> ### ✅ CONFIRMADO — 10/09/2026
+>
+> A recuperação de Android 14 **funcionou de ponta a ponta**: numa TV de verdade o
+> aparelho bootou até a tela inicial do Android TV e completou a configuração
+> normalmente — não só um sinal de vida pelo USB. A firmware que resolveu está
+> espelhada aqui para **download direto, sem cadastro**:
+> **[mi-tv-stick-4k_14_26.6.10_91_MDZ-27-AA.7z](https://github.com/RodrigoDeveloperX/xiaomi-mi-tv-stick-4k-mdz-27-aa-recovery/releases/download/v2.0-firmware-a14-26.6.10/mi-tv-stick-4k_14_26.6.10_91_MDZ-27-AA.7z)**
+> (989.694.390 bytes · SHA-256 `6300f49e9e15ba50e4b6bc9ea7f3243b80178c122b08a440a5e144b8ea6f6711`).
+> Método completo: **[recuperação Android 14](docs/pt-br/recuperacao-android-14.md)**.
+
 - Tudo aqui foi **executado de verdade** em um MDZ-27-AA. O log da gravação Android 11 está em [`logs/flash-2026-09-08-did-not-boot.log`](logs/flash-2026-09-08-did-not-boot.log) — 16 etapas, todas com `rc=0`, e o aparelho continuou sem bootar. A recuperação que funcionou está em [`logs/successful-flash-a14-2026-09-10.log`](logs/successful-flash-a14-2026-09-10.log) — 18 etapas, 0 falhas.
 - Isto é publicado como **um apoio de último recurso para quem já está com problema e não encontrou solução em lugar nenhum**. Se o seu stick ainda liga normalmente, você quase certamente não precisa disto.
 - **Não nos responsabilizamos por qualquer falha, dano, perda de dados ou aparelho inutilizado** decorrente de alguém seguir estas anotações. Você faz isso por sua conta e risco, no seu próprio hardware, por decisão sua.
