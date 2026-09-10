@@ -19,7 +19,7 @@ Not sure which one you have? [One command tells you.](#which-brick-do-you-have)
 
 ## ⚠️ Read this before anything else
 
-**This is a report of one real recovery that worked, not a product and not a guarantee.**
+**This is a report of real recovery attempts on one device — the ones that failed and the one that worked. It is not a product and not a guarantee.**
 
 > ### 🛑 CORRECTION — 2026-09-10
 >
@@ -442,9 +442,28 @@ Each step prints an `OKAY` and a total time. Observed durations from our log:
 
 > **Why the wall charger matters.** The stick is specified for 5V/1A. A TV or monitor USB port often supplies only 500 mA. The first boot after a flash is the peak-draw moment — app optimisation plus heavy eMMC writes — and that is exactly when insufficient power bites. Use a proper charger at least for this first boot.
 
-Once it is up, it will pick up official OTA updates over Wi-Fi on its own. You do not need to flash anything by cable again.
+> ### ⚠️ About the OTA update it will offer you
+>
+> An earlier version of this page said the stick would pick up official OTA updates
+> on its own and that you would never need a cable again. **That advice is how this
+> device got bricked in the first place.**
+>
+> The Android 11 → Android 14 OTA is exactly the update that fails partway on this
+> model: it replaces the bootloader, does not finish the rest, and leaves the stick on
+> the Mi logo with an Android 14 bootloader and an Android 11 system. The 4PDA firmware
+> thread warns about this in both directions, and multiple people there report the
+> same brick.
+>
+> If your device is on Android 11 and you value it working, think before accepting
+> that update. There is no way to disable system OTA on Android TV without root —
+> you can defer it, not block it. If it does apply and the stick stops booting, that
+> is recoverable: see [Android 14 recovery](docs/android-14-recovery.md).
 
-> **Factory reset is safe on this firmware.** The widely repeated warning that a factory reset locks the bootloader and forces a re-flash applies to the **modified `1469_MOD_9`** build, which requires an unlocked bootloader. This one is stock, Xiaomi-signed, locked bootloader — reset is a normal operation.
+> **On factory reset.** An earlier version of this page stated flatly that a factory
+> reset is safe on the stock firmware, and that the warning about it re-locking the
+> bootloader only applies to the modified `1469_MOD_9` build. That reasoning is
+> plausible but it was **never tested here**, so treat it as unverified rather than as
+> a fact this repository stands behind.
 
 ---
 
@@ -548,6 +567,22 @@ That is the safety net doing its job. `adnl getvar identify` returned something 
 
 ### Flash succeeded but the stick still will not boot
 
+**First, check whether you flashed the wrong generation — this is the most likely cause,
+and it is what happened here.** Get into the second fastboot stage and read the
+bootloader version:
+
+```
+fastboot reboot bootloader
+fastboot getvar version-bootloader
+```
+
+If it answers `01.01.25xxxx` or `01.01.26xxxx`, your bootloader is **Android 14** and
+no Android 11 firmware will ever boot this device, no matter how cleanly it flashes.
+Go to [Android 14 recovery](docs/android-14-recovery.md). Retrying the flash, changing
+cables or waiting longer will not help — we tried all of it, for two days.
+
+Only if the bootloader is not Android 14:
+
 - Give it the full **10 minutes** on first boot before concluding anything.
 - Power it from a **wall charger**, not a TV USB port. This is a genuinely common cause.
 - Try a different HDMI port and cable to rule out the display path.
@@ -592,7 +627,7 @@ Being explicit about this matters — following a confidently written but wrong 
 - Build identity read straight out of the images: `ro.build.display.id=RTT0.211222.001.1440 release-keys`, `ro.build.id=RTT0.211222.001`, `ro.build.version.incremental=1440`, `ro.build.version.release=11`, `ro.build.version.security_patch=2023-10-05`, `ro.build.date=Fri Nov 24 10:24:43 CST 2023`.
 - Device identity read straight out of the images: `ro.product.device=soul`, `ro.product.model=MiTV-AYFR0`, `ro.product.brand=Xiaomi`, `ro.board.platform=s4`.
 - The `super` image is an Android dynamic-partition container, LP metadata v10.2, 4096-byte logical blocks, containing `system_a`, `vendor_a`, `product_a`, `odm_a`, `system_ext_a`.
-- The full working command sequence and the exact timing of each step, from [`logs/successful-flash-2026-09-08.log`](logs/successful-flash-2026-09-08.log): 16 steps, all `rc=0`, 09:38:01 → 09:43:20.
+- The full command sequence and the exact timing of each step, from [`logs/flash-2026-09-08-did-not-boot.log`](logs/flash-2026-09-08-did-not-boot.log): 16 steps, all `rc=0`, 09:38:01 → 09:43:20. **Note what this does and does not prove:** it proves the tool wrote every partition without error. It does not prove a recovery — that device did not boot afterwards.
 - The identity string `06-00-00-10-00-00-00-00` and the tool version `Amlogic USB DNL tool: V[2.6.3] at Aug 20 2021`.
 - `super` written from a **raw** image in normal mode completed in 287.46 s.
 - [`tools/simg2img.ps1`](tools/simg2img.ps1) produces output byte-identical to the Python reference across all four sparse chunk types (verified against a synthetic image covering RAW, FILL, DONT_CARE and CRC32).

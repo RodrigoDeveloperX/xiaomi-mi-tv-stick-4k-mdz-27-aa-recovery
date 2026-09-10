@@ -438,9 +438,24 @@ O `super` mostra um contador de porcentagem que anda devagar. Ele está trabalha
 
 > **Por que o carregador importa.** O stick é especificado para 5V/1A. Uma porta USB de TV ou monitor costuma entregar só 500 mA. O primeiro boot depois de uma gravação é o momento de pico de consumo — otimização de aplicativos mais escrita pesada na eMMC — e é exatamente aí que a alimentação insuficiente aparece. Use um carregador de verdade pelo menos nesse primeiro boot.
 
-Depois que subir, ele pega as atualizações OTA oficiais sozinho pelo Wi-Fi. Você não precisa gravar nada por cabo de novo.
+> ### ⚠️ Sobre a atualização OTA que ele vai oferecer
+>
+> Uma versão anterior desta página dizia que o stick pegaria as atualizações OTA
+> oficiais sozinho e que você nunca mais precisaria de cabo. **Esse conselho é como
+> este aparelho foi parar em brick.**
+>
+> A OTA de Android 11 → Android 14 é exatamente a atualização que falha no meio neste
+> modelo: ela troca o bootloader, não termina o resto, e deixa o stick no logo Mi com
+> bootloader Android 14 e sistema Android 11. O tópico de firmwares do 4PDA avisa sobre
+> isso nas duas direções, e várias pessoas de lá relatam o mesmo brick.
+>
+> Se o seu aparelho está no Android 11 e você gosta dele funcionando, pense antes de
+> aceitar essa atualização. Não existe forma de desligar a OTA de sistema no Android TV
+> sem root — dá para adiar, não para bloquear. Se ela se aplicar e o stick parar de
+> bootar, isso é recuperável: veja a
+> [recuperação Android 14](docs/pt-br/recuperacao-android-14.md).
 
-> **Reset de fábrica é seguro nesta firmware.** O aviso muito repetido de que um reset de fábrica trava o bootloader e obriga a regravar vale para a build **modificada `1469_MOD_9`**, que exige bootloader destravado. Esta aqui é stock, assinada pela Xiaomi, com bootloader travado — reset é operação normal.
+> **Sobre reset de fábrica — não verificado.** Uma versão anterior desta página afirmava, sem ressalva, que o reset é seguro na firmware stock. O raciocínio é plausível, mas **nunca foi testado aqui**. Trate como hipótese, não como fato que este repositório sustenta. O texto original era: O aviso muito repetido de que um reset de fábrica trava o bootloader e obriga a regravar vale para a build **modificada `1469_MOD_9`**, que exige bootloader destravado. Esta aqui é stock, assinada pela Xiaomi, com bootloader travado — reset é operação normal.
 
 ---
 
@@ -544,6 +559,23 @@ Isso é a proteção fazendo o trabalho dela. O `adnl getvar identify` retornou 
 
 ### A gravação deu certo mas o stick continua sem dar boot
 
+**Antes de tudo, confira se você gravou a geração errada — é a causa mais provável, e
+foi o que aconteceu aqui.** Entre no segundo estágio do fastboot e leia a versão do
+bootloader:
+
+```
+fastboot reboot bootloader
+fastboot getvar version-bootloader
+```
+
+Se responder `01.01.25xxxx` ou `01.01.26xxxx`, o seu bootloader é **Android 14** e
+nenhuma firmware Android 11 vai bootar este aparelho, por mais limpa que seja a
+gravação. Vá para a [recuperação Android 14](docs/pt-br/recuperacao-android-14.md).
+Repetir a gravação, trocar de cabo ou esperar mais não resolve — tentamos tudo isso,
+durante dois dias.
+
+Só se o bootloader não for Android 14:
+
 - Dê os **10 minutos** completos de primeiro boot antes de concluir qualquer coisa.
 - Alimente por um **carregador de tomada**, não pela USB da TV. Essa é uma causa realmente comum.
 - Teste outra porta e outro cabo HDMI, para descartar o caminho de vídeo.
@@ -588,7 +620,7 @@ Ser explícito nisso importa — seguir uma instrução escrita com confiança m
 - Identidade do build lida direto das imagens: `ro.build.display.id=RTT0.211222.001.1440 release-keys`, `ro.build.id=RTT0.211222.001`, `ro.build.version.incremental=1440`, `ro.build.version.release=11`, `ro.build.version.security_patch=2023-10-05`, `ro.build.date=Fri Nov 24 10:24:43 CST 2023`.
 - Identidade do aparelho lida direto das imagens: `ro.product.device=soul`, `ro.product.model=MiTV-AYFR0`, `ro.product.brand=Xiaomi`, `ro.board.platform=s4`.
 - A imagem `super` é um contêiner de partições dinâmicas do Android, metadata LP v10.2, blocos lógicos de 4096 bytes, contendo `system_a`, `vendor_a`, `product_a`, `odm_a`, `system_ext_a`.
-- A sequência completa de comandos que funcionou e o tempo exato de cada etapa, em [`logs/successful-flash-2026-09-08.log`](logs/successful-flash-2026-09-08.log): 16 etapas, todas `rc=0`, 09:38:01 → 09:43:20.
+- A sequência completa de comandos e o tempo exato de cada etapa, em [`logs/flash-2026-09-08-did-not-boot.log`](logs/flash-2026-09-08-did-not-boot.log): 16 etapas, todas `rc=0`, 09:38:01 → 09:43:20. **Repare no que isso prova e no que não prova:** prova que a ferramenta gravou cada partição sem erro. Não prova recuperação — aquele aparelho não bootou depois.
 - A string de identidade `06-00-00-10-00-00-00-00` e a versão da ferramenta `Amlogic USB DNL tool: V[2.6.3] at Aug 20 2021`.
 - O `super` gravado a partir de imagem **bruta** em modo normal completou em 287,46 s.
 - O [`tools/simg2img.ps1`](tools/simg2img.ps1) produz saída byte a byte idêntica à referência em Python nos quatro tipos de chunk sparse (verificado contra uma imagem sintética cobrindo RAW, FILL, DONT_CARE e CRC32).
