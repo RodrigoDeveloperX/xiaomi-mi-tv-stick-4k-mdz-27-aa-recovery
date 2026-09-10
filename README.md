@@ -1,6 +1,17 @@
 # Xiaomi Mi TV Stick 4K MDZ-27-AA — Unbrick / Recovery
 
-Recovering a **Xiaomi Mi TV Stick 4K (MDZ-27-AA)** that was **stuck on the boot screen** by writing the stock firmware **`RTT0.211222.001.1440`** over USB, using Amlogic **DNL** mode and the `adnl` tool.
+Recovering a **Xiaomi Mi TV Stick 4K (MDZ-27-AA)** that is **stuck on the Mi logo**.
+
+There are two of these bricks, they look identical, and they need opposite fixes:
+
+- **Your Android 11 to 14 OTA failed partway** (the common case since Sept 2026) — the bootloader
+  is already Android 14 and no Android 11 firmware will ever boot it.
+  → **[Android 14 recovery](docs/android-14-recovery.md)**
+- **Your device was on Android 11 and never took that OTA** — write the stock firmware
+  `RTT0.211222.001.1440` over USB in Amlogic **DNL** mode, with the `adnl` tool.
+  → the procedure on this page
+
+Not sure which one you have? [One command tells you.](#which-brick-do-you-have)
 
 🇧🇷 **[Versão completa em português — README-PT-BR.md](README-PT-BR.md)**
 
@@ -72,7 +83,8 @@ Android 14.
 - [What you need](#what-you-need)
 - [The firmware file](#the-firmware-file)
 - [Verifying your download](#verifying-your-download)
-- [Step by step](#step-by-step)
+- [**Android 14 recovery** (separate document)](docs/android-14-recovery.md)
+- [Step by step — Android 11 route](#step-by-step--android-11-route)
 - [The three obstacles we hit](#the-three-obstacles-we-hit-and-how-each-was-solved)
 - [Troubleshooting](#troubleshooting)
 - [What we changed compared to the original `go.cmd`](#what-we-changed-compared-to-the-original-gocmd)
@@ -85,6 +97,9 @@ Android 14.
 ---
 
 ## Is this for you?
+
+> Read [Which brick do you have?](#which-brick-do-you-have) first — it decides which
+> of the two procedures applies to your device.
 
 ### The device
 
@@ -285,7 +300,13 @@ Case does not matter. **If either hash differs, do not use the file** — downlo
 
 ---
 
-## Step by step
+## Step by step — Android 11 route
+
+> **This section only applies if your device never completed the Android 14 OTA.**
+> If `fastboot getvar version-bootloader` returns `01.01.25xxxx` or `01.01.26xxxx`
+> in the second fastboot stage, your bootloader is Android 14 and everything below
+> will flash perfectly and still not boot. Go to
+> **[Android 14 recovery](docs/android-14-recovery.md)** instead.
 
 Total hands-on time is short; the flash itself took **5 minutes 19 seconds** end to end in our run (09:38:01 → 09:43:20 in the log).
 

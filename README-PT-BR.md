@@ -1,6 +1,17 @@
 # Xiaomi Mi TV Stick 4K MDZ-27-AA — Recuperação / Unbrick
 
-Recuperação de um **Xiaomi Mi TV Stick 4K (MDZ-27-AA)** que estava **travado na tela de boot**, gravando a firmware stock **`RTT0.211222.001.1440`** por USB, usando o modo **DNL** da Amlogic e a ferramenta `adnl`.
+Recuperação de um **Xiaomi Mi TV Stick 4K (MDZ-27-AA)** que está **parado no logo Mi**.
+
+São dois bricks diferentes, idênticos por fora, que pedem curas opostas:
+
+- **A sua OTA de Android 11 para 14 falhou no meio** (o caso comum desde set/2026) — o bootloader
+  já é Android 14 e nenhuma firmware Android 11 vai bootar.
+  → **[recuperação Android 14](docs/pt-br/recuperacao-android-14.md)**
+- **O aparelho estava no Android 11 e nunca recebeu essa OTA** — grave a firmware stock
+  `RTT0.211222.001.1440` por USB no modo **DNL** da Amlogic, com a ferramenta `adnl`.
+  → o procedimento desta página
+
+Não sabe qual é o seu? [Um comando responde.](#qual-brick-é-o-seu)
 
 🇺🇸 **[Full English version — README.md](README.md)**
 
@@ -71,7 +82,8 @@ Se você não está confortável com isso, pare por aqui e procure a garantia ou
 - [O que você precisa](#o-que-você-precisa)
 - [O arquivo de firmware](#o-arquivo-de-firmware)
 - [Verificando o download](#verificando-o-download)
-- [Passo a passo](#passo-a-passo)
+- [**Recuperação Android 14** (documento separado)](docs/pt-br/recuperacao-android-14.md)
+- [Passo a passo — caminho Android 11](#passo-a-passo--caminho-android-11)
 - [Os três obstáculos que enfrentamos](#os-três-obstáculos-que-enfrentamos-e-como-cada-um-foi-resolvido)
 - [Solução de problemas](#solução-de-problemas)
 - [O que mudamos em relação ao `go.cmd` original](#o-que-mudamos-em-relação-ao-gocmd-original)
@@ -284,7 +296,13 @@ Maiúsculas e minúsculas não importam. **Se qualquer um dos hashes for diferen
 
 ---
 
-## Passo a passo
+## Passo a passo — caminho Android 11
+
+> **Esta seção só vale se o seu aparelho nunca completou a OTA de Android 14.**
+> Se o `fastboot getvar version-bootloader` devolver `01.01.25xxxx` ou `01.01.26xxxx`
+> no segundo estágio do fastboot, o seu bootloader é Android 14 e tudo abaixo vai
+> gravar perfeitamente e continuar sem bootar. Vá para a
+> **[recuperação Android 14](docs/pt-br/recuperacao-android-14.md)**.
 
 O tempo de mão na massa é curto; a gravação em si levou **5 minutos e 19 segundos** do início ao fim na nossa execução (09:38:01 → 09:43:20 no log).
 
