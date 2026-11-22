@@ -94,6 +94,7 @@ Android 14.
 - [The firmware file](#the-firmware-file)
 - [Verifying your download](#verifying-your-download)
 - [**Android 14 recovery** (separate document)](docs/android-14-recovery.md)
+- [**Recovering from Linux** (separate document)](docs/linux.md)
 - [Step by step — Android 11 route](#step-by-step--android-11-route)
 - [The three obstacles we hit](#the-three-obstacles-we-hit-and-how-each-was-solved)
 - [Troubleshooting](#troubleshooting)

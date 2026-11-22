@@ -1,0 +1,11 @@
+# Mi TV Stick 4K (MDZ-27-AA / soul): acesso sem root ao DNL e ao fastboot.
+# Instalar:
+#   sudo cp 51-mi-tv-stick.rules /etc/udev/rules.d/
+#   sudo udevadm control --reload && sudo udevadm trigger
+
+# 1o estagio: Amlogic DNL (so existe ~5 s depois de conectar o cabo)
+SUBSYSTEM=="usb", ATTR{idVendor}=="1b8e", ATTR{idProduct}=="c004", MODE="0666", TAG+="uaccess"
+# 2o estagio: fastboot (visto como 18d1:4ee7 no Linux)
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee7", MODE="0666", TAG+="uaccess"
+# 2o estagio visto como 18d1:0d02 no Windows por outro relato; nao observado no Linux
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="0d02", MODE="0666", TAG+="uaccess"

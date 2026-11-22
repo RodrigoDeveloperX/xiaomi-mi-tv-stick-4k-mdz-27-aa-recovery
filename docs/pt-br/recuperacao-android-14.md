@@ -108,6 +108,7 @@ O `tools/check-usb-mode.ps1` deste repositório diz em que estágio você está.
   Android 14. Veja [Onde conseguir os arquivos](#onde-conseguir-os-arquivos).
 - O **Google USB Driver** (acima).
 - Windows. O pacote traz o próprio `fastboot.exe`, `mke2fs.exe` e `make_f2fs.exe`.
+  No Linux, veja [Recuperação pelo Linux](linux.md).
 
 Prefira a build que casa com o seu bootloader. Leia a sua com
 `fastboot getvar version-bootloader` no 2º estágio: `01.01.260610.084506` significa
