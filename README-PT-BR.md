@@ -93,6 +93,7 @@ Se você não está confortável com isso, pare por aqui e procure a garantia ou
 - [O arquivo de firmware](#o-arquivo-de-firmware)
 - [Verificando o download](#verificando-o-download)
 - [**Recuperação Android 14** (documento separado)](docs/pt-br/recuperacao-android-14.md)
+- [**Recuperação pelo Linux** (documento separado)](docs/pt-br/linux.md)
 - [Passo a passo — caminho Android 11](#passo-a-passo--caminho-android-11)
 - [Os três obstáculos que enfrentamos](#os-três-obstáculos-que-enfrentamos-e-como-cada-um-foi-resolvido)
 - [Solução de problemas](#solução-de-problemas)

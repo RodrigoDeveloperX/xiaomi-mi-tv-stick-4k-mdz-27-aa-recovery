@@ -108,6 +108,7 @@ link is dead, physically unplug and replug it — only re-enumeration revives it
   package. See [Getting the files](#getting-the-files).
 - The **Google USB Driver** (above).
 - Windows. The package ships its own `fastboot.exe`, `mke2fs.exe` and `make_f2fs.exe`.
+  On Linux, see [Recovering from Linux](linux.md).
 
 Prefer the build that matches your bootloader. Read yours with
 `fastboot getvar version-bootloader` in the 2nd stage: `01.01.260610.084506` means
